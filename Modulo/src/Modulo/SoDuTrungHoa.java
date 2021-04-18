@@ -2,6 +2,8 @@ package Modulo;
 
 public class SoDuTrungHoa {
 
+
+
     static int ChinesRemainder(int[] num, int[] rem,
                         int k)
     {
@@ -25,5 +27,6 @@ public class SoDuTrungHoa {
         int[] rem = {16,5};
         int k = num.length;
         System.out.println("x is " + ChinesRemainder(num, rem, k));
+        System.out.println(Helper.modulo_inverse(6,13));
     }
 }

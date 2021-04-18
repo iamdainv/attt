@@ -1,0 +1,51 @@
+Thuật toán RSA:
+    - q,p là 2 số nguyên tố khác nhau
+    - n = q*p
+    - phi(n) = (p - 1) * (q - 1)
+    - Chọn số nguyên e , gcd(e,phi(n)) = 1
+    - Tính d = nghich dao modulo(e, phi(n))
+    - Khóa công khai : PU = { e, n }
+    - Khóa riêng : PR = { d , n }
+
+    - Mã hóa với mã khóa công khai :
+        + Bản rõ : M < n
+        + Bản mã : C = M^e mod n
+    - Giải mã bằng khóa riêng :
+        + Bản mã : C
+        + Bản rõ : M = C^d mod n
+
+Trao đổi khóa Diffie-Hellman:
+    1. Các giá trị công khai chung
+        + q là số nguyên tố
+        + a là một căn nguyên thủy của q, a < q
+    2. A tạo khóa
+        + Chọn khóa riêng xA < q
+        + Tính khóa công khai yA = a^xA mod q
+    3. B tạo khóa
+        + Chọn khóa riêng xB < q
+        + Tính khóa công khai yB = a^xB mod q
+    4. A tính khóa bí mật chung
+        + K = yB^xA mod q
+    5. B tính khóa bí mật chung
+        + K = yA^xB mod q
+
+Mật mã ElGamal:
+    1. Các giá trị công khai chung
+        + q là số nguyên tố
+        + a là một căn nguyên thủy của q ( a<q )
+    2. A tạo khóa
+        + Chọn xA < q - 1
+        + Tính yA = a ^ xA mod q
+        + Khóa công khai : PU = { q,a,yA }
+        + Khóa riêng : xA
+    3. B gửi tin nhắn cho A
+        + Bản gốc : M < q
+        + Chọn ngẫu nhiên k < q
+        + Tính K = (yA)^k mod q
+        + Tính C1 = a^k mod q
+        + Tính C2 = KM mod q
+        + Bản mã (C1,C2)
+    4. A giải mã tin nhắn từ B
+        + Bản mã (C1,C2)
+        + Tính K = (C1)^xA mod q
+        + Bản rõ : M = (C2 * K^-1) mod q

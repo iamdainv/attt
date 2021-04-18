@@ -1,0 +1,28 @@
+/*
+ * Các phép toán với modulo:
+ * Phép Cộng:    (a + b) mod n = [(a mod n) + (b mod n)] mod n.
+ * Phép Trừ :    (a - b) mod n = [(a mod n) - (b mod n)] mod n.
+ * Phép Nhân:    (a * b) mod n = [(a mod n) * (b mod n)] mod n.
+ * Phép Chia:    (a + b) mod n = [(a mod n) * (b^(-1) mod n)] mod n.
+ *
+ * Nghịch đảo của b mod n
+ * x * b mod n = 1 => x là nghịch đảo của b mod n
+ *
+ * Định lý Fermat:
+ * 'n' là số nguyên tố && (a > 0)
+ * Dạng 1: a^(n - 1) mod n = 1 mod n        ( a % n != 0 )
+ * Dạng 2: a^n mod n = a mod n
+ *
+ * Định lý Euler:
+ * Dạng 1: a^(φ(n)) mod n =  1 mod n        ( a & n là số nguyên tố cùng nhau )
+ * Dạng 2: a^(φ(n) + 1) mod n = a mod n     ( a & n là hai số nguyên )
+ *
+ * Tính phi:
+ * φ(p)    = p - 1             ( p là số nguyên tố )
+ * φ(p*q)  = φ(p)*φ(q)         ( p, q là số nguyên tố cùng nhau )
+ * φ(p^m)  = p^m - p^(m-1)     ( p là số nguyên tố, m là số nguyên dương )
+ *
+ * Số nguyên tố cùng nhau:
+ * - Các số nguyên a và b được gọi là nguyên tố cùng nhau (tiếng Anh: coprime hoặc relatively prime) nếu chúng có Ước số chung lớn nhất là 1
+ *
+ * */
